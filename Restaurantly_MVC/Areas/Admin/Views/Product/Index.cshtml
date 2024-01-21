@@ -1,0 +1,47 @@
+﻿@model List<Product>
+@{
+	int count = 0;
+}
+<div class="col-lg-6 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+
+
+			<div class="table-responsive">
+				<h4 class="card-title">Product</h4>
+				<a class="btn btn-inverse-success" asp-action="Create" asp-controller="Product" >Create</a>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Image</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Settings</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (Product product in Model)
+						{
+							count++;
+							<tr>
+								<td>@count</td>
+								<td><img style="height:125px;width:125px;" src="~/assets/img/menu/@product.ImageUrl" /></td>
+								<td>@product.Name</td>
+								<td>@product.Price</td>
+								<td>
+									<a class="btn  btn-inverse-warning" asp-action="Update" asp-controller="Product" asp-route-id="@product.Id">Update</a>
+
+									<a class="btn  btn-inverse-danger" asp-action="Delete" asp-controller="Product" asp-route-id="@product.Id">Delete</a>
+								</td>
+
+							</tr>
+						}
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

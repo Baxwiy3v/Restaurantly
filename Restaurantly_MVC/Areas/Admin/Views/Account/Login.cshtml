@@ -1,0 +1,69 @@
+﻿@model LoginVM
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+            <div class="row flex-grow">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <div class="auth-form-transparent text-left p-3">
+ 
+                     
+                      
+                        <form class="pt-3" method="post">
+                            <h6 class="font-weight-light">Login</h6>
+                            <div class="text-danger"asp-validation-summary="ModelOnly"></div>
+                            <div class="form-group">
+                                <label asp-for="UserOrEmail">UserOrEmail</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent border-right-0">
+                                            <i class="mdi mdi-account-outline text-primary"></i>
+                                        </span>
+                                    </div>
+                                   
+                                    <input asp-for="UserOrEmail" type="text" class="form-control form-control-lg border-left-0" placeholder="UserOrEmail">
+                                     <span class="text-danger" asp-validation-for="UserOrEmail"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent border-right-0">
+                                            <i class="mdi mdi-lock-outline text-primary"></i>
+                                        </span>
+                                    </div>
+                                    <input asp-for="Password" type="password" class="form-control form-control-lg border-left-0"  placeholder="Password">
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                </div>
+                            </div>
+                            <div class="my-2 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <label asp-for="RememberMe" class="form-check-label text-muted">
+                                        <input asp-for="RememberMe" type="checkbox" class="form-check-input">
+                                        Keep me signed in
+                                    </label>
+                                </div>
+                                <a href="#" class="auth-link text-black">Forgot password?</a>
+                            </div>
+
+                            <div class="my-3">
+                                <button class="btn btn-primary">Login</button>
+                            </div>
+
+                     
+                            <div class="text-center mt-4 font-weight-light">
+                                Don't have an account? <a asp-action="Register" asp-controller="Account" class="text-primary">Create</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 login-half-bg d-flex flex-row">
+                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2020  All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
